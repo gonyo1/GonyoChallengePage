@@ -21,8 +21,8 @@ function getNowTime() {
         datetime.getHours()===12?
             "오후 " + datetime.getHours():
             "오후 " + (datetime.getHours() - 12);
-    nowMinute = (datetime.getMinutes()<10?"0":'') + datetime.getMinutes();
-    nowSecond = (datetime. getSeconds()<10?"0":'') + datetime.getSeconds();
+    nowMinute = String(datetime.getMinutes()).padStart(2, "0") // (datetime.getMinutes()<10?"0":'') + datetime.getMinutes();
+    nowSecond = String(datetime.getSeconds()).padStart(2, "0") // (datetime. getSeconds()<10?"0":'') + datetime.getSeconds();
     // set text to h1 tag
     let clockTime = `${nowHour}:${nowMinute}:${nowSecond}`
     clock.querySelector("#clock_time").innerText = clockTime
