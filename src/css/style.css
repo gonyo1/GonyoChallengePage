@@ -1,0 +1,112 @@
+.body{
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* 시계 */
+.clock {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 200;
+    margin: 0 auto;
+    text-align: center;
+}
+#clock_date{
+    font-weight: 100;
+    font-size: 14px;
+}
+#clock_time{
+    font-weight: 700;
+    font-size: 40px;
+}
+
+/* 날씨 */
+/* div 안의 span을 중앙정렬하려면 line-height를 같게하자 */
+.weather {
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 200;
+    text-align: center;
+}
+#weather_box{
+    min-width: 250px;
+    height: 40px;
+    line-height: 34px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 30px;
+}
+#weather_title{
+    line-height: 34px;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0px;
+    color: rgba(20,12,53, 0.85);
+    vertical-align: middle;
+}
+
+/* 로그인 */
+.login {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    vertical-align: middle;
+    color: white;
+    text-align: center;
+}
+#login_info {
+    height: 40px;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 5px;
+}
+#login_account_name {
+    min-width: 300px;
+    line-height: 1.9;
+    font-size: 20px;
+    font-style: Bold;
+    border: 0px solid;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 120px;
+}
+#login_account_name:focus {
+    outline: none;
+}
+.login_success {
+    top: 30%;
+    font-size: 120px;
+    font-weight: 700;
+}
+#sign-in {
+    color: gray;
+    font-weight: 700;
+    font-size: 26px;
+    display: inline-block;
+    margin-left: -60px;
+    background-color: transparent;
+    border: 0px solid;
+    cursor: pointer;
+    vertical-align: center;
+}#sign-in:hover{
+    color: rgb(0, 155, 255);
+    cursor: pointer;
+}
+#sign-in:disabled{
+    color: gray;
+    cursor: default;
+}
