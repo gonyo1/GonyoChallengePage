@@ -11,6 +11,7 @@ const USERNAME_KEY = "username"
 const HIDDEN_CLASSNAME = "hidden"
 
 let accountText = 0;
+let username = "";
 let savedusername = localStorage.getItem(USERNAME_KEY)
 
 // eventlisner 연결
@@ -34,6 +35,7 @@ function onAccountCreate(event){
     login.classList.add(HIDDEN_CLASSNAME)
 
     // add username to localstorage
+    username = loginAccount.value
     localStorage.setItem(USERNAME_KEY, username)
 
     // paint Username
