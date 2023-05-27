@@ -25,7 +25,7 @@ function getWeather(latitude, longitude) {
         var weather = data.weather[0].main;
         var temperature = data.main.temp;
   
-        nowWeather.innerText = weather + " " + temperature + "℃";
+        nowWeather.innerText = `${weather} ${temperature}℃`;
       })
       .catch(function (error) {
         console.log("Error:", error);

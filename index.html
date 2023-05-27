@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +12,23 @@
     <title>Gonyo JSC Project</title>
 </head>
 <body>
+    <!-- header -->
+    <div id="header">
+        <div id="headernav-content">
+            <ul>
+                <li class="nav-item nav-menuback">
+                    <button class="nav-item nav-menuback-button fa-solid fa-house fa-lg" type="button"></button>
+                </li>
+                <li class="nav-item" id="nav-user-name">
+                    <span class="nav-item nav-username"></span>
+                </li>
+                <li class="nav-item nav-user">
+                    <button class="nav-item nav-user-button fa-solid fa-user fa-lg" type="button"></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <!-- 실시간 시계 -->
     <div class="clock">
         <span id="clock_date">2023년 00월 00일(금)</span><br>
@@ -31,8 +48,10 @@
             <label for="login_account_name" >Gonyo Project에 로그인하세요</label><br>
         </div>
         <div class="form-cell-wrapper" >
-            <input type="text" required placeholder="이름을 입력하세요22" id="login_account_name" autofocus/>
-            <button class="fa-solid fa-right-to-bracket" id="sign-in" disabled></button>
+            <form id="login-form">
+                <input type="text" required maxlength="20" placeholder="Write your name" id="login_account_name" autofocus/>
+                <button class="fa-solid fa-right-to-bracket" id="sign-in" disabled></button>
+            </form>
         </div>
     </div>
 

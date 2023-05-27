@@ -1,9 +1,11 @@
 const login = document.querySelector(".login")
 
+const loginForm = body.querySelector("#login-form")
 const signinButton = body.querySelector("#sign-in")
 const formCellWrapper = body.querySelector(".form-cell-wrapper")
 const loginAccount = body.querySelector("#login_account_name")
 const loginInfo = body.querySelector("#login_info")
+const AccountName = body.querySelector("#nav-user-name")
 
 let accountText = 0;
 
@@ -17,14 +19,15 @@ function onKeyPressAccount(event) {
     signinButton.disabled = true;
     }
 }
-function onAccountCreate(){
-    formCellWrapper.style.display = "none";
-    loginInfo.innerText = accountText + "님 안녕하세요🐸";
-    loginInfo.classList.add("login_success");
-    console.log(loginInfo)
-    loginInfo.style.fontSize = "40px";
+function onAccountCreate(event){
+    event.preventDefault()
+
+    const username = loginAccount.value
+    AccountName.innerText = `${username} 님`;
+
+    login.classList.add("hidden")
 }
 
 // eventlisner
 loginAccount.addEventListener("keyup", onKeyPressAccount)
-signinButton.addEventListener("click", onAccountCreate)
+loginForm.addEventListener("submit", onAccountCreate)

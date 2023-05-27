@@ -1,5 +1,3 @@
-const backgroundImage = body.querySelector("background-image")
-
 const files = Array.from({length:7}, (_,i) => `${i}.jpg`);
 
 var imagefile = files[Math.floor(Math.random() * files.length)]
