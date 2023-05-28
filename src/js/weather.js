@@ -31,4 +31,5 @@ function getWeather(latitude, longitude) {
         console.log("Error:", error);
       });
   }
+
 // navigator.geolocation.getCurrentPosition(showWeather);

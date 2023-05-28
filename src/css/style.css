@@ -1,174 +1,242 @@
 .body{
+    margin: 0;
+    padding: 0;
     color: white;
     font-family: 'Noto Sans KR', sans-serif;
-    height: 100vh;
-    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
 }
 .hidden {
     display: none;
 }
-/* header */
-#header {
-    position: fixed; /* Added position:relative */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 2; /* Added z-index to ensure it appears above the image */
-}
-#headernav-content ul {
-    display: flex;
-    justify-content: space-between;
-}
-.nav-item.nav-menuback {
-    margin-right: auto;
-}
-.nav-item button:hover {
-    color: rgba(255, 255, 255, 0.623)
-}
-.nav-item{
-    list-style: none;
-    color: white;
-    border: 0px;
-    background: transparent;
-    padding: 10px;
-}
-#nav-user-name {
-    font-weight: 500;
-    font-size: 14px;
-}
-.nav-item.nav-menuback-button:hover {
-    color: rgba(255, 255, 255, 0.623)
-}
+
+
 /* 이미지 */
-#image-container {
-    display: block;
+.image-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+#image-container-img {
+    position: fixed;
+    z-index: -2;
+    object-fit: cover;
+    filter: blur(10px);
 }
 #image-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    width: 105%;
+    height: 105vh;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#sidebody {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    flex: 15;
+    height: 230px;
+    position: fixed;
+}
+    #sidebody-image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 230px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    /* 날씨 */
+    /* div 안의 span을 중앙정렬하려면 line-height를 같게하자 */
+    .weather {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 190px;
+        color: white;
+        font-weight: 500;
+        text-align: center;
+    }
+    #weather_box{
+        height: 30px;
+        line-height: 25px;
+        background-color: rgba(255, 255, 255, 0.212);
+        border-radius: 30px;
+    }
+    #weather_title{
+        line-height: 25px;
+        font-weight: 500;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+
+    /* 시계 */
+    .basicinfo {
+        position: fixed;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        top: 60px;
+        left: 5px;
+        width: 230px;
+        text-align: center;
+    }
+    .clock {
+        position: fixed;
+        top: 52px;
+        left: 22px;
+        max-width: 200px;
+        color: white;
+        font-weight: 200;
+        text-align: left;
+    }
+    #clock_date{
+        font-weight: 100;
+        font-size: 12px;
+    }
+    #clock_time{
+        font-weight: 700;
+        font-size: 28px;
+        max-height: 53px;
+    }
+
+/* mainbody */
+#mainbody {
+    position: relative;
+    left: 230px;
+    width: calc(100vw - 230px - 30px);
+    height: 100vh;
 }
 
-/* 시계 */
-.basicinfo {
-    display: flex;
-    position: absolute;
-    top: 15%;
-    width: 100vw;
-    text-align: center;
-}
-.clock {
-    top: 0%;
-    left: 5%;
-    position: absolute;
-    color: white;
-    font-weight: 200;
-    margin-left: auto;
-    float: right;
-    text-align: left;
-}
-#clock_date{
-    font-weight: 100;
-    font-size: 14px;
-}
-#clock_time{
-    font-weight: 700;
-    font-size: 40px;
-    max-height: 53px;
-}
+    /* header */
+    #header#headernav-content {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        position: absolute; /* Added position:relative */
+        top: 10px;
+        left: 0px;
+        width: 95%;
+        align-items: center;
+        z-index: 2; /* Added z-index to ensure it appears above the image */
+    }
+    #headernav-content ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+    }
+    .nav-item.nav-menuback {
+        margin-right: auto;
+    }
+    .nav-item button:hover {
+        color: rgba(255, 255, 255, 0.623)
+    }
+    .nav-item{
+        color: white;
+        border: 0px;
+        background: transparent;
+        padding: 10px;
+    }
+    #nav-user-name {
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .nav-item.nav-menuback-button:hover {
+        color: rgba(255, 255, 255, 0.623)
+    }
 
-/* 날씨 */
-/* div 안의 span을 중앙정렬하려면 line-height를 같게하자 */
-.weather {
-    top: 80px;
-    left: 5%;
-    width: 200;
-    position: absolute;
-    color: white;
-    font-weight: 200;
-    text-align: center;
-}
-#weather_box{
-    min-width: 150px;
-    height: 30px;
-    line-height: 25px;
-    background-color: rgba(255, 255, 255, 0.212);
-    border-radius: 30px;
-}
-#weather_title{
-    line-height: 25px;
-    font-weight: 500;
-    font-size: 14px;
-    vertical-align: middle;
-}
+    /* 로그인 */
+    .login {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        vertical-align: middle;
+        color: white;
+        text-align: center;
+    }
+    #login_info {
+        width: 260px;
+        height: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 20px;
+    }
+    .form-cell-wrapper {
+        left: 50%;
+        margin: 0;
+        padding: 0;
+        max-width: 245px;
+        align-items: center;
+    }
+    #login-form {
+        left: 50%;
+    }
+    #login-form ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+    }
+    .login-form-item.inputbox {
+        margin-left: 22px;
+        margin-right: auto;
+    }
+    .login-form-item.submitbtn {
+        margin-left: -32px;
+        margin-top: 7px;
+        margin-right: auto;
+    }
+    #login_account_name {
+        padding: 10px;
+        margin: 0px;
+        min-width: 160px;
+        line-height: 1.3;
+        font-size: 14px;
+        font-style: Bold;
+        border: 0px solid;
+        border-radius: 5px;
+        padding-left: 20px;
+        padding-right: 60px;
+        vertical-align: center;
+    }
+    #login_account_name:focus {
+        outline: none;
+    }
+    #sign-in {
+        color: gray;
+        font-weight: 700;
+        font-size: 20px;
+        background-color: transparent;
+        border: 0px solid;
+        cursor: pointer;
+    }
+    #sign-in:hover{
+        color: rgb(0, 155, 255);
+        cursor: pointer;
+    }
+    #sign-in:disabled{
+        color: gray;
+        cursor: default;
+    }
 
-/* 로그인 */
-.login {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    vertical-align: middle;
-    color: white;
-    text-align: center;
-}
-#login_info {
-    width: 100vw;;
-    height: 40px;
-    font-size: 24px;
-    font-weight: 600;
-    margin: 5px;
-}
-#login_account_name {
-    min-width: 200px;
-    line-height: 1.3;
-    font-size: 17px;
-    font-style: Bold;
-    border: 0px solid;
-    border-radius: 5px;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 60px;
-    margin: 0px;
-    vertical-align: center;
-}
-#login_account_name:focus {
-    outline: none;
-}
-.login_success {
-    top: 30%;
-    font-size: 120px;
-    font-weight: 700;
-}
-#sign-in {
-    color: gray;
-    font-weight: 700;
-    font-size: 20px;
-    display: inline-block;
-    margin-top: 20px;
-    margin-left: -40px;
-    background-color: transparent;
-    border: 0px solid;
-    cursor: pointer;
-    vertical-align: center;
-}#sign-in:hover{
-    color: rgb(0, 155, 255);
-    cursor: pointer;
-}
-#sign-in:disabled{
-    color: gray;
-    cursor: default;
-}
+    /* TODO */
+    #todo-ul li{
+        font-size: 20px;
+        line-height: 1.8;
+        color: white;
+        font-weight: 700;
+        text-align: left;
+        vertical-align: center;
+    }

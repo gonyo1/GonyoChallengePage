@@ -13,61 +13,89 @@
 </head>
 <body>
     <!-- background image -->
-    <div id="image-container">
-        <img src="" id="image-container-img">
+    <div class="image-container">
+        <img id="image-container-img">
         <div id="image-overlay"></div>
     </div>
 
-    <!-- header -->
-    <div id="header">
-        <div id="headernav-content">
-            <ul>
-                <li class="nav-item nav-menuback">
-                    <button class="nav-item nav-menuback-button fa-solid fa-house fa-lg" type="button"></button>
-                </li>
-                <li class="nav-item nav-user-name">
-                    <span class="nav-item nav-username" id="nav-user-name"></span>
-                </li>
-                <li class="nav-item nav-user">
-                    <button class="nav-item nav-user-button fa-solid fa-user fa-lg" type="button"></button>
-                </li>
+    <!-- main body -->
+    <div id="mainbody">
+        
+        <!-- header -->
+        <div id="header">
+            <div id="headernav-content">
+                <ul>
+                    <li class="nav-item nav-menuback">
+                        <button class="nav-item nav-menuback-button fa-solid fa-house fa-lg" type="button"></button>
+                    </li>
+                    <li class="nav-item nav-user-name">
+                        <span class="nav-item nav-username" id="nav-user-name"></span>
+                    </li>
+                    <li class="nav-item nav-user">
+                        <button class="nav-item nav-user-button fa-solid fa-user fa-lg" type="button"></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 로그인 -->
+        <div class="login hidden">
+            <div id="login_info">
+                <label for="login_account_name" >Gonyo Project에 로그인하세요</label><br>
+            </div>
+            <div class="form-cell-wrapper" >
+                <form id="login-form">
+                    <ul padding="0" margin="0">
+                        <li class="login-form-item inputbox">
+                            <input type="text" required maxlength="20" placeholder="Write your name" id="login_account_name" autofocus/>
+                        </li>
+                        <li class="login-form-item submitbtn">
+                            <button class="fa-solid fa-right-to-bracket" id="sign-in" disabled></button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+        <!-- todo -->
+        <div>
+
+            <form id="todo-form">
+                <input id="todo-input" type="text" placeholder="Write a TO-do task">
+            </form>
+
+            <ul id="todo-ul">
             </ul>
         </div>
     </div>
-    <div class="basicinfo">
-        <!-- 실시간 시계 -->
-        <div class="clock">
-            <span id="clock_date">2023년 00월 00일(금)</span><br>
-            <span id="clock_time">17시 50분 25초</span>
-        </div>
-        
-        <!-- 날씨 -->
-        <div class="weather">
-            <div id="weather_box">
-                <span id="weather_title">Clouds 27.3℃</span>
-            </div>
-        </div>
-    </div>
 
-    <!-- 로그인 -->
-    <div class="login hidden">
-        <div id="login_info">
-            <label for="login_account_name" >Gonyo Project에 로그인하세요</label><br>
-        </div>
-        <div class="form-cell-wrapper" >
-            <form id="login-form">
-                <input type="text" required maxlength="20" placeholder="Write your name" id="login_account_name" autofocus/>
-                <button class="fa-solid fa-right-to-bracket" id="sign-in" disabled></button>
-            </form>
+    <!-- side body -->
+    <div id="sidebody">
+        <div id="sidebody-image-overlay"></div>
+        <div class="basicinfo">
+            <!-- 날씨 -->
+            <div class="weather">
+                <div id="weather_box">
+                    <span id="weather_title">Clouds 27.3℃</span>
+                </div>
+            </div>
+
+            <!-- 실시간 시계 -->
+            <div class="clock">
+                <span id="clock_date">2023년 00월 00일(금)</span><br>
+                <span id="clock_time">17시 50분 25초</span>
+            </div>
         </div>
     </div>
 
     <!-- JS 불러오기 -->
     <script src="https://kit.fontawesome.com/8d835f9dbe.js" crossorigin="anonymous"></script>
+    
     <script src="src/js/import.js"></script>
     <script src="src/js/login.js"></script>
-    <script src="src/js/clock.js"></script>
     <script src="./src/js/weather.js"></script>
+    <script src="src/js/clock.js"></script>
+    <script src="src/js/todo.js"></script>
     <script src="src/js/img.js"></script>
 </body>
 </html>
