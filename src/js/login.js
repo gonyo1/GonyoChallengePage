@@ -1,4 +1,5 @@
 const login = document.querySelector(".login")
+const todo = document.querySelector(".todo")
 
 const loginForm = body.querySelector("#login-form")
 const signinButton = body.querySelector("#sign-in")
@@ -32,7 +33,8 @@ function onAccountCreate(event){
     event.preventDefault()
 
     // add hidden class to login div
-    login.classList.add(HIDDEN_CLASSNAME)
+    login.classList.add(HIDDEN_CLASSNAME);
+    todo.classList.remove(HIDDEN_CLASSNAME);
 
     // add username to localstorage
     username = loginAccount.value
@@ -45,11 +47,13 @@ function onAccountCreate(event){
 if (savedusername === null) {
     // show the form
     login.classList.remove(HIDDEN_CLASSNAME);
+    todo.classList.add(HIDDEN_CLASSNAME);
     
     // eventlisner
     loginAccount.addEventListener("keyup", onKeyPressAccount)
     loginForm.addEventListener("submit", onAccountCreate)
 } else {
     // hide the form
+    todo.classList.remove(HIDDEN_CLASSNAME);
     patingUsername()
 }

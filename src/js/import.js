@@ -3,7 +3,7 @@ const homebutton = document.querySelector(".nav-menuback")
 
 // home button click
 function onHomebuttonClick() {
-    document.location.href="/";
+    document.location.href="/vanilla-js";
 }
 
 homebutton.addEventListener("click", onHomebuttonClick)

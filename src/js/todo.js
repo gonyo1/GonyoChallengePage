@@ -32,7 +32,7 @@ function paintToDo (newTodoObject) {
     const toDoDelete = document.createElement("button");
 
     // awesome icon to button
-    toDoDelete.className = "fa-solid fa-check";
+    toDoDelete.className = "fa-solid fa-circle";
 
     toDoSpan.innerText = `  ${newTodoObject["text"]}`;
     toDoDelete.addEventListener("click", deleteToDo)
