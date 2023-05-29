@@ -32,4 +32,4 @@ function getWeather(latitude, longitude) {
       });
   }
 
-// navigator.geolocation.getCurrentPosition(showWeather);
+navigator.geolocation.getCurrentPosition(showWeather);
