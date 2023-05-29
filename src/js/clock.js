@@ -16,15 +16,10 @@ let nowSecond = 0;
 function getNowTime() {
     // get time from datetime
     var datetime = new Date()
-    nowHour = datetime.getHours()<12?
-        "오전 " + datetime.getHours():
-        datetime.getHours()===12?
-            "오후 " + datetime.getHours():
-            "오후 " + (datetime.getHours() - 12);
+    nowHour = datetime.getHours()
     nowMinute = String(datetime.getMinutes()).padStart(2, "0") // (datetime.getMinutes()<10?"0":'') + datetime.getMinutes();
-    nowSecond = String(datetime.getSeconds()).padStart(2, "0") // (datetime. getSeconds()<10?"0":'') + datetime.getSeconds();
     // set text to h1 tag
-    let clockTime = `${nowHour}:${nowMinute}:${nowSecond}`
+    let clockTime = `${nowHour}:${nowMinute}`
     clock.querySelector("#clock_time").innerText = clockTime
 }
 
@@ -38,7 +33,7 @@ function getNowDate() {
     nowDay = datetime.getDay()
     nowDay = days[nowDay]
     // set text to h1 tag
-    let clockDate = `${nowYear}년 ${nowMonth}월 ${nowDate}일(${nowDay})`
+    let clockDate = `${nowYear}.${nowMonth}.${nowDate}.${nowDay}`
     clock.querySelector("#clock_date").innerText = clockDate
 }
 

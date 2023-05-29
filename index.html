@@ -20,23 +20,6 @@
 
     <!-- main body -->
     <div id="mainbody">
-        
-        <!-- header -->
-        <div id="header">
-            <div id="headernav-content">
-                <ul>
-                    <li class="nav-item nav-menuback">
-                        <button class="nav-item nav-menuback-button fa-solid fa-house fa-lg" type="button"></button>
-                    </li>
-                    <li class="nav-item nav-user-name">
-                        <span class="nav-item nav-username" id="nav-user-name"></span>
-                    </li>
-                    <li class="nav-item nav-user">
-                        <button class="nav-item nav-user-button fa-solid fa-user fa-lg" type="button"></button>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
         <!-- 로그인 -->
         <div class="login hidden">
@@ -56,37 +39,82 @@
                 </form>
             </div>
         </div>
-
-        <!-- todo -->
-        <div id="todo" class="todo hidden">
-            <div id="todo-ul-div">
-                <ul id="todo-ul">
-                </ul>
-            </div>
-            <div id="todo-form-div">
-                <form id="todo-form">
-                    <input id="todo-input" type="text" placeholder=" Write To Do list">
-                </form>
+        
+        <div class="div-box hidden" id="mainbody-content">
+            <!-- username -->
+            <div class="div-box user-name">
+                <span class="item-username" id="user-name">Gonyo</span>
             </div>
 
-        </div>
-    </div>
-
-    <!-- side body -->
-    <div id="sidebody">
-        <div id="sidebody-image-overlay"></div>
-        <div class="basicinfo">
-            <!-- 날씨 -->
-            <div class="weather">
-                <div id="weather_box">
-                    <span id="weather_title">Clouds 27.3℃</span>
+            <!-- header -->
+            <div class="div-box" id="header">
+                <div>
+                    <span class="header-span">🥩</span>
+                    <span class="header-span">  오늘도 고생했으니 잘먹고 푹 쉬어요</span>
                 </div>
             </div>
 
-            <!-- 실시간 시계 -->
-            <div class="clock">
-                <span id="clock_date">2023년 00월 00일(금)</span><br>
-                <span id="clock_time">17시 50분 25초</span>
+            <!-- -------------------------------------------->
+            <div class="div-box mainwrapbox">
+                <!-- side -->
+                <div class="div-box sidebox">
+                    <span>Bookmark</span>
+                    <hr>
+                    <div class="div-box" id="Bookmark">
+                        <div class="div-box">
+                            <label>🧡</span>
+                            <a href="https://indischool.com/boards/libArt">인디스쿨</a>
+                        </div>
+                        <div class="div-box">
+                            <label>💛</span>
+                            <a href="https://www.youtube.com/watch?v=ltk1tUioqOg">청소</a>
+                        </div>
+                        <div class="div-box">
+                            <label>💚</span>
+                            <a href="https://www.youtube.com/watch?v=OKsbLH27weE">노래</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- main -->
+                <div class="div-box mainbox">
+                    <span>To-do List</span>
+                    <hr>
+                    
+                    <!-- todo -->
+                    <div class="div-box" id="todo">
+                        <div class="div-box" id="todo-form-div">
+                            <form id="todo-form">
+                                <input id="todo-input" type="text" placeholder=" Write To Do list">
+                            </form>
+                        </div>
+                        <div class="div-box" id="todo-ul-div">
+                            <ul class="div-box" id="todo-ul">
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- add -->
+                <div class="div-box addbox">
+                    <div class="div-box clock">
+                        <span>Time</span>
+                        <hr>
+                        <!-- 실시간 시계 -->
+                        <div class="div-box">
+                            <span id="clock_date">2023년 00월 00일(금)</span><br>
+                            <span id="clock_time">17시 50분 25초</span>
+                        </div>
+                    </div>
+
+                    <div class="div-box weather">
+                        <span>Weather</span>
+                        <hr>
+                        <!-- 날씨 -->
+                        <div class="div-box">
+                            <span id="weather_title">Clouds 27.3℃</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

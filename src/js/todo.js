@@ -26,13 +26,15 @@ function paintToDo (newTodoObject) {
     // create li tag
     const toDoLi = document.createElement("li");
     toDoLi.id = newTodoObject["id"]
+    toDoLi.className = "div-box";
 
     // create span / button tag
     const toDoSpan = document.createElement("span");
     const toDoDelete = document.createElement("button");
 
     // awesome icon to button
-    toDoDelete.className = "fa-solid fa-circle";
+    toDoDelete.innerText = "✅";
+    toDoDelete.className = "delete-to-do";
 
     toDoSpan.innerText = `  ${newTodoObject["text"]}`;
     toDoDelete.addEventListener("click", deleteToDo)

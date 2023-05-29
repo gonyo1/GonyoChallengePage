@@ -1,12 +1,12 @@
 const login = document.querySelector(".login")
-const todo = document.querySelector(".todo")
+const mainpage = document.querySelector("#mainbody-content")
 
 const loginForm = body.querySelector("#login-form")
 const signinButton = body.querySelector("#sign-in")
 const formCellWrapper = body.querySelector(".form-cell-wrapper")
 const loginAccount = body.querySelector("#login_account_name")
 const loginInfo = body.querySelector("#login_info")
-const AccountName = body.querySelector("#nav-user-name")
+const AccountName = body.querySelector("#user-name")
 
 const USERNAME_KEY = "username"
 const HIDDEN_CLASSNAME = "hidden"
@@ -27,14 +27,14 @@ function onKeyPressAccount(event) {
 }
 function patingUsername() {
     var localusername = localStorage.getItem(USERNAME_KEY)
-    AccountName.innerText = `${localusername} 님`;
+    AccountName.innerText = `Hello, ${localusername} 님`;
 }
 function onAccountCreate(event){
     event.preventDefault()
 
     // add hidden class to login div
     login.classList.add(HIDDEN_CLASSNAME);
-    todo.classList.remove(HIDDEN_CLASSNAME);
+    mainpage.classList.remove(HIDDEN_CLASSNAME);
 
     // add username to localstorage
     username = loginAccount.value
@@ -47,13 +47,13 @@ function onAccountCreate(event){
 if (savedusername === null) {
     // show the form
     login.classList.remove(HIDDEN_CLASSNAME);
-    todo.classList.add(HIDDEN_CLASSNAME);
+    mainpage.classList.add(HIDDEN_CLASSNAME);
     
     // eventlisner
-    loginAccount.addEventListener("keyup", onKeyPressAccount)
-    loginForm.addEventListener("submit", onAccountCreate)
+    loginAccount.addEventListener("keyup", onKeyPressAccount);
+    loginForm.addEventListener("submit", onAccountCreate);
 } else {
     // hide the form
-    todo.classList.remove(HIDDEN_CLASSNAME);
+    mainpage.classList.remove(HIDDEN_CLASSNAME);
     patingUsername()
 }
